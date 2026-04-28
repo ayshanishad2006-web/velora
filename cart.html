@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Cart</h1>
+<div id="cart"></div>
+<h2 id="total"></h2>
+
+<script src="app.js"></script>
+
+<script>
+let cart = getCart();
+let total = 0;
+
+cart.forEach((item,i)=>{
+total += item.price * item.qty;
+
+document.getElementById("cart").innerHTML += `
+<p>${item.name} - ₹${item.price} x ${item.qty}
+<button onclick="removeItem(${i})">Remove</button>
+</p>
+`;
+});
+
+document.getElementById("total").innerText="Total ₹"+total;
+
+function removeItem(i){
+let cart = getCart();
+cart.splice(i,1);
+saveCart(cart);
+location.reload();
+}
+</script>
+
+</body>
+</html>

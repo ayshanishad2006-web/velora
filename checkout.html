@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Checkout</h1>
+
+<input placeholder="Name"><br>
+<input placeholder="Address"><br>
+
+<button onclick="placeOrder()">Place Order</button>
+
+<script>
+function placeOrder(){
+alert("Order placed successfully!");
+localStorage.removeItem("cart");
+window.location="index.html";
+}
+</script>
+
+</body>
+</html>

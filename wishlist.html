@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Wishlist</h1>
+<div id="wish"></div>
+
+<script>
+let w = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+w.forEach(item=>{
+document.getElementById("wish").innerHTML += `
+<p>${item.name} - ₹${item.price}</p>
+`;
+});
+</script>
+
+</body>
+</html>
